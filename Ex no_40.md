@@ -53,97 +53,82 @@ bc a bc
 bc bc a
 
 
-## AIM:
-To write a C program to generate and print all unique permutations of a string array in strict lexicographical order.
 
-## ALGORITHM:
-1.Start the program.
-2.Read the number of strings n.
-3.Read the array of strings.
-4.Sort the array in lexicographical order.
-5.Use a custom next_permutation() function to generate the next lexicographically greater permutation.
-6.Print the current permutation.
-7.Repeat until no further permutations exist.
-8.End the program.
+## Program
 
-## PROGRAM:
 ```
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdbool.h>
-
-int compare(const void *a, const void *b) {
-    return strcmp(*(const char **)a, *(const char **)b);
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void swap(char **a,char**b)
+{
+    char *temp=*a;
+    *a=*b;
+    *b=temp;
 }
-
-bool next_permutation(char *arr[], int n) {
-    int i = n - 2;
-    while (i >= 0 && strcmp(arr[i], arr[i + 1]) >= 0)
+int compare(const void *a,const void *b)
+{
+    return strcmp(*(const char **)a,*(const char **)b);
+    
+}
+int next_permutation(char **arr,int n)
+{
+    int i=n-2;
+    while(i>=0 && strcmp(arr[i],arr[i+1])>=0)
+    
         i--;
-    if (i < 0) return false;
-
-    int j = n - 1;
-    while (strcmp(arr[i], arr[j]) >= 0)
+    if(i<0) return 0;
+    int j=n-1;
+    while(strcmp(arr[j],arr[i])<=0)
         j--;
-
-    // Swap arr[i] and arr[j]
-    char *temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-
-    // Reverse arr[i+1] to arr[n-1]
-    int left = i + 1, right = n - 1;
-    while (left < right) {
-        temp = arr[left];
-        arr[left] = arr[right];
-        arr[right] = temp;
-        left++;
-        right--;
+    swap(&arr[i],&arr[j]);
+    int start =i+1,end=n-1;
+    while(start<end)
+    {
+        swap(&arr[start],&arr[end]);
+        start++;
+        end--;
+        
     }
-    return true;
+    return -1;
+    
 }
-
-void print_permutation(char *arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%s ", arr[i]);
+void print_array(char **arr,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        printf("%s",arr[i]);
+        if(i!=n-1) printf(" ");
     }
     printf("\n");
 }
-
-int main() {
+int main()
+{
     int n;
-    scanf("%d", &n);
-
-    char *arr[100];
-    for (int i = 0; i < n; i++) {
-        arr[i] = malloc(100);
-        scanf("%s", arr[i]);
+    scanf("%d",&n);
+    char **arr=malloc(n*sizeof(char *));
+    for(int i=0;i<n;i++)
+    {
+        arr[i]=malloc(100*sizeof(char));
+        scanf("%s",arr[i]);
     }
-
-    // Sort array to start from the smallest lexicographical permutation
-    qsort(arr, n, sizeof(char *), compare);
-
-    // Print all unique permutations
-    print_permutation(arr, n);
-    while (next_permutation(arr, n)) {
-        print_permutation(arr, n);
+    qsort(arr,n,sizeof(char *),compare);
+    print_array(arr,n);
+    while(next_permutation(arr,n))
+    {
+        print_array(arr,n);
     }
-
-    // Free memory
-    for (int i = 0; i < n; i++) {
-        free(arr[i]);
-    }
-
+    for(int i=0;i<n;i++) free(arr[i]);
+    free(arr);
     return 0;
+    
 }
+
 ```
 
-## OUTPUT:
+## Output
 
-![image](https://github.com/user-attachments/assets/5555a9bc-9e61-4b2f-bf77-806d9bca74e4)
+<img width="297" height="253" alt="Screenshot 2026-03-19 191355" src="https://github.com/user-attachments/assets/dde2a44c-6289-4708-a452-84aaaad85ec2" />
 
 ## RESULT:
-
-The C program was successfully compiled and executed. It printed all unique permutations of the input strings in strict lexicographical order.
+Thus, the program is executed and verified successfully.
