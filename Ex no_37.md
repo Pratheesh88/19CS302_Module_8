@@ -46,39 +46,29 @@ When we sum the integers 10 and 4, we get the integer 14. When we subtract the s
 
 When we sum the floating-point numbers 4.0 and 2.0, we get 6.0. When we subtract the second number 2.0 from the first number 4.0, we get 2.0 as their difference.
 
-## AIM: 
-To write a program to print the sum of the integers in the array. 
- 
- 
-## ALGORITHM: 
-1. Start. 
-2. Define a variables. 
-3. Write a program to print the sum of the integers in the array. 
-4. Read the value using scanf. 
-5. Ask the user to make an input. 
-6. Print out the answer. 
-7. End. 
- 
-## PROGRAM: 
-~~~
-#include<stdio.h> 
-int main() 
-{ 
-int i,n,sum=0,arr[100]; 
-scanf("%d",&n); 
-{ 
-for(i=0;i<n;i++) 
-scanf("%d",&arr[i]); 
-for(i=0;i<n;i++)  
-sum=sum+arr[i]; 
-i++; 
-}printf("%d",sum); 
-} 
-~~~
-## OUTPUT: 
-![image](https://github.com/user-attachments/assets/0b982ee9-f80b-408f-a76f-d56f477b64b8)
 
- 
- 
-## RESULT: 
+
+## Program
+
+```
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+    float c, d;
+    scanf("%d %d", &a, &b);
+    scanf("%f %f", &c, &d);
+    printf("%d %d\n", a + b, a - b);
+    printf("%.1f %.1f", c + d, c - d);
+    return 0;
+}
+
+```
+
+## Output
+
+<img width="352" height="198" alt="Screenshot 2026-03-19 191821" src="https://github.com/user-attachments/assets/4f7ad09a-2e1f-48f8-b507-25c1e039d018" />
+
+## RESULT:
 Thus, the program is executed and verified successfully.
