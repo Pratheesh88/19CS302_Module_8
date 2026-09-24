@@ -21,67 +21,44 @@ If n>49 print Greater than 49.
 
 forty one
 
-## AIM: 
-To write a program to print the English word corresponding to the given number. 
- 
- 
-## ALGORITHM: 
-1. Start. 
-2. Define a variables. 
-3. Write a program to print the English word corresponding to the given number. 
-4. Read the value using scanf. 
-5. Ask the user to make an input. 
-6. Print out the answer. 
-7. End. 
- 
-## PROGRAM: 
-```
-#include <stdio.h> 
- 
-int main() { 
-    int num; 
- 
-    printf("Enter a 
-number (0-9): "); 
-    scanf("%d", &num); 
- 
-    switch (num) { 
-        case 0: 
-printf("Zero\n"); break; 
-        case 1: 
-printf("One\n"); break; 
-        case 2: 
-printf("Two\n"); break; 
-        case 3: 
-printf("Three\n"); 
-break; 
-        case 4: 
-printf("Four\n"); break; 
-        case 5: 
-printf("Five\n"); break; 
-        case 6: 
-printf("Six\n"); break; 
-        case 7: 
-printf("Seven\n"); 
-break; 
-        case 8: 
- SAVEETHA ENGINEERING COLLEGE  
-printf("Eight\n"); 
-break; 
-        case 9: 
-printf("Nine\n"); break; 
-        default: 
-printf("Invalid 
-number!\n"); break; 
-    } 
- 
-    return 0; 
-} 
- ```
- 
-## OUTPUT: 
-![image](https://github.com/user-attachments/assets/bd7d32c1-d8de-4542-a488-07de3d49047b)
 
- 
-## RESULT: 
+## Program
+
+```
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    if (n >= 41 && n <= 49)
+  {
+        printf("forty ");
+        switch(n)
+       {
+            case 41: printf("one\n"); break;
+            case 42: printf("two\n"); break;
+            case 43: printf("three\n"); break;
+            case 44: printf("four\n"); break;
+            case 45: printf("five\n"); break;
+            case 46: printf("six\n"); break;
+            case 47: printf("seven\n"); break;
+            case 48: printf("eight\n"); break;
+            case 49: printf("nine\n"); break;
+        }
+    }
+    else if (n > 49)
+    {
+        printf("Greater than 49\n");
+    }
+    return 0;
+}
+
+
+```
+## Output
+
+<img width="592" height="301" alt="image" src="https://github.com/user-attachments/assets/f5c0cce3-4858-4a6a-963f-d900962a333f" />
+
+## RESULT:
 Thus, the program is executed and verified successfully.
