@@ -1,50 +1,41 @@
 # EX 39 C program to find sum of digits.
-## DATE: 04/05/2025
-## AIM: 
-To write a program to print the sum and difference of the given two integers . 
- 
- 
-## ALGORITHM: 
-1. Start. 
-2. Define a variables. 
-3. Write a program to print the sum and difference of the integers.. 
-4. Read the value using scanf. 
-5. Ask the user to make an input. 
-6. Print out the answer. 
-7. End. 
- 
-## PROGRAM: 
-```
-#include <stdio.h> 
- 
-int main() { 
-    int a, b; 
-    int sum, difference; 
- 
-    // Input two numbers 
-    printf("Enter two 
-integers: "); 
-    scanf("%d %d", &a, 
-&b); 
- 
-    // Calculate sum and 
-difference 
-    sum = a + b; 
-    difference = a - b; 
- 
-    // Print the results 
-    printf("Sum = 
-%d\n", sum); 
-    printf("Difference = 
-%d\n", difference); 
- 
-    return 0; 
-} 
- ```
- 
-## OUTPUT: 
- ![image](https://github.com/user-attachments/assets/75453ddf-d7ea-44c2-bf59-a52b949179a1)
+## DATE:
+## AIM:
+To write a C program to find sum of digits.
 
- 
-## RESULT: 
-Thus, the program is executed and verified successfully. 
+## Algorithm
+
+1.Declare integer variables n and sum, and initialize sum to 0.
+
+2.Read the number n from the user.
+
+3.Use a loop to repeat until n becomes 0.
+
+4.In each iteration, extract the last digit using n % 10 and add it to sum, then remove the last digit using n = n / 10.
+
+5.After the loop ends, display the value of sum. 
+
+## Program:
+```
+#include<stdio.h>
+int main()
+{
+    int n,sum=0;
+    scanf("%d",&n);
+    while(n!=0)
+    {
+        sum=sum+n%10;
+        n=n/10;
+    }
+    printf("%d",sum);
+    return 0;
+}
+```
+
+## Output:
+
+<img width="273" height="195" alt="Screenshot 2026-03-19 191103" src="https://github.com/user-attachments/assets/56949fac-1c2c-4ffd-ac16-155045b6914d" />
+
+
+## Result:
+Thus the program was executed and the output was verified successfully.
